@@ -7,7 +7,7 @@ const AppHeader = () => {
       <Image style={styles.appIcon} source={require("../../assets/icon.png")} />
       <Image
         style={styles.githubIcon}
-        source={require("../../assets/github-logo.png")}
+        source={require("../../assets/open-source.png")}
       />
     </View>
   );
@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: colors.WHITE,
     shadowColor: "#171717",
-    shadowOffset: { width: -2, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 3,
+    shadowOffset: { width: 0, height: 7 },
+    shadowOpacity: 0.05,
+    shadowRadius: 5,
     zIndex: 1,
     elevation: 1,
     paddingLeft: 12,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   githubIcon: {
     width: 18,
-    height: 19,
+    height: 18,
   },
 });
 

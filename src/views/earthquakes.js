@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     paddingBottom: 80,
-    paddingTop: 10,
+    paddingTop: 20,
   },
 });
 export default EarthquakesView;
