@@ -1,16 +1,30 @@
 import { StyleSheet, View, Text } from "react-native";
 import colors from "../theme/colors";
-const EarthquakeItem = () => {
+import { baseColorCalc } from "../helpers/base-color.helper";
+const EarthquakeItem = ({ data, lastEarthquake }) => {
+  const baseColor = baseColorCalc(data.Magnitude);
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        lastEarthquake && styles.dashedBorder,
+        { backgroundColor: baseColor.light },
+      ]}
+    >
       <View style={styles.info}>
-        <View style={styles.magnitude}>
-          <Text style={{ fontSize: 18, fontWeight: "700" }}>4.5</Text>
+        <View style={[styles.magnitude, { borderColor: baseColor.normal }]}>
+          <Text
+            style={{ fontSize: 18, fontWeight: "700", color: baseColor.normal }}
+          >
+            {data.Magnitude}
+          </Text>
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.city}>Hatay</Text>
-          <Text style={styles.district}>Göksun</Text>
-          <Text style={styles.shortInfo}>8.17 km, bir saat önce</Text>
+          <Text style={styles.city}>{data.Region.City}</Text>
+          <Text style={styles.district}>{data.Region.District}</Text>
+          <Text style={styles.shortInfo}>
+            {data.Depth} Km, {data.Date}
+          </Text>
         </View>
       </View>
     </View>
@@ -34,7 +48,7 @@ const styles = StyleSheet.create({
     height: 64,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: colors.GRAY_TWO,
+    borderStyle: "dashed",
     justifyContent: "center",
     alignItems: "center",
   },
@@ -61,6 +75,11 @@ const styles = StyleSheet.create({
   },
   shortInfo: {
     fontSize: 10,
+  },
+  dashedBorder: {
+    borderWidth: 1,
+    borderColor: colors.GRAY_TWO,
+    borderStyle: "dashed",
   },
 });
 export default EarthquakeItem;

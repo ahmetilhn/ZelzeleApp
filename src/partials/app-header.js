@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
     paddingRight: 12,
     justifyContent: "space-between",
+    alignItems: "center",
     flexDirection: "row",
   },
   appIcon: {
@@ -34,8 +35,8 @@ const styles = StyleSheet.create({
     height: 36,
   },
   githubIcon: {
-    width: 32,
-    height: 32,
+    width: 18,
+    height: 19,
   },
 });
 

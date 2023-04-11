@@ -7,7 +7,7 @@ export default {
   RED: "#fca5a5",
   ORANGE: "#fb923c",
   GREEN: "#28a745",
-  RED_LIGHT: "#fca5a5",
-  ORANGE_LIGHT: "#fb923c",
+  RED_LIGHT: "#ffe0e0",
+  ORANGE_LIGHT: "#fee9da",
   GREEN_LIGHT: "#28a745",
 };
